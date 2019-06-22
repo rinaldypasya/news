@@ -62,7 +62,7 @@ func (idb *InDB) PostNews(c *gin.Context) {
 		errorResponse(c, http.StatusInternalServerError, "Failed to create documents")
 		return
 	}
-	c.Status(http.StatusOK)
+	c.JSON(http.StatusOK, news)
 }
 
 func (idb *InDB) GetNews(c *gin.Context) {
